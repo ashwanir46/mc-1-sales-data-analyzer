@@ -40,15 +40,21 @@ public class SalesDataAnalyzer {
     // Sort the customers based on purchase amount
     public List<SalesRecord> getAllCustomersSortedByPurchaseAmount(List<SalesRecord> salesData, AmountComparator amountComparator){
 
-       return null;
+        return null;
     }
 
     // Find the top customer who spent the maximum time on the site
-    public SalesRecord getTopCustomerWhoSpentMaxTimeOnSite(List<SalesRecord> salesData,TimeOnSiteComparator timeOnSiteComparator){
+    public SalesRecord getTopCustomerWhoSpentMaxTimeOnSite(List<SalesRecord> salesData, TimeOnSiteComparator timeOnSiteComparator) {
 
         return null;
     }
 
-
+    public static void main(String[] args) {
+        SalesDataAnalyzer salesDataAnalyzer = new SalesDataAnalyzer();
+        List<SalesRecord> salesRecordList = salesDataAnalyzer.readFile("src/main/resources/purchase_details.csv");
+        for (SalesRecord salesRecord : salesRecordList) {
+            System.out.println(salesRecord);
+        }
+    }
 
 }
