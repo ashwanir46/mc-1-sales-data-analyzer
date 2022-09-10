@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class SalesDataAnalyzer {
@@ -38,15 +39,16 @@ public class SalesDataAnalyzer {
    }
 
     // Sort the customers based on purchase amount
-    public List<SalesRecord> getAllCustomersSortedByPurchaseAmount(List<SalesRecord> salesData, AmountComparator amountComparator){
-
-        return null;
+    public List<SalesRecord> getAllCustomersSortedByPurchaseAmount(List<SalesRecord> salesData, AmountComparator amountComparator) {
+        Collections.sort(salesData, amountComparator);
+        return salesData;
     }
 
     // Find the top customer who spent the maximum time on the site
     public SalesRecord getTopCustomerWhoSpentMaxTimeOnSite(List<SalesRecord> salesData, TimeOnSiteComparator timeOnSiteComparator) {
-
-        return null;
+        Collections.sort(salesData, timeOnSiteComparator);
+        SalesRecord salesRecord = salesData.get(0);
+        return salesRecord;
     }
 
     public static void main(String[] args) {
